@@ -116,4 +116,8 @@ def logoutUser(request):
 
 @login_required(login_url='/login')
 def mailBox(request):
-    return render(request, 'mail.html')
+    users = User.objects.all()
+    context = {
+        'users': users
+    }
+    return render(request, 'mail.html', context)

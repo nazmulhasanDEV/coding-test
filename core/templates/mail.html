@@ -94,9 +94,11 @@
             <div class="box-body">
               <div class="form-group">
                 <select name="to" class="form-control" id="to" multiple>
-                  <option>User 1</option>
-                  <option>User 1</option>
-                  <option>User 1</option>
+                  {% if users %}
+                  {% for x in users %}
+                  <option value="{{x.email}}">{{x.email}}</option>
+                  {% endfor %}
+                  {% endif %}
                 </select>
 <!--                <input class="form-control" placeholder="To:">-->
               </div>
