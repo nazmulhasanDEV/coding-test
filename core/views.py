@@ -112,3 +112,8 @@ def login_user(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+
+@login_required(login_url='/login')
+def mailBox(request):
+    return render(request, 'mail.html')
